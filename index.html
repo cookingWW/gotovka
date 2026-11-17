@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-visual">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="description" content="Готовка: подскажет, что приготовить из продуктов дома. 2000 рецептов, калории и рацион на день.">
-<meta name="theme-color" content="#2563eb">
+<meta name="theme-color" content="#ffffff"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="icon" href="img/icon-512.png" type="image/png" sizes="512x512">
@@ -126,7 +126,7 @@ html,body,main,.card,.det{text-align:left}
 .hero{display:block;margin:0 auto 6px;max-width:420px;width:100%}
 .em,.deco span{font-family:"Trebuchet MS","Segoe UI","Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",system-ui,sans-serif}
 .em{font-size:28px;line-height:1;margin-right:2px}
-.fl{margin:10px 0 0}.fl summary{display:none}.fl:not([open]){display:none}#fl_btn{position:relative;padding:12px 14px;flex:none}#fl_btn .tg{position:absolute;top:-6px;right:-6px;margin:0;background:var(--btn);color:#fff;font-weight:700}.fl h4{margin:14px 0 6px;font-size:14px;color:var(--mut)}.fk{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.more{width:100%;margin:12px 0}.fl{margin:10px 0 0}.fl summary{display:none}.fl:not([open]){display:none}#fl_btn{position:relative;padding:12px 14px;flex:none}#fl_btn .tg{position:absolute;top:-6px;right:-6px;margin:0;background:var(--btn);color:#fff;font-weight:700}.fl h4{margin:14px 0 6px;font-size:14px;color:var(--mut)}.fk{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .fc{display:flex;flex-wrap:wrap;gap:6px}.ck{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer}
 .ck input{flex:none;width:18px;height:18px;min-width:18px;padding:0;margin:0;border-radius:4px;accent-color:var(--btn)}.ck:has(input:checked){background:var(--soft);border-color:var(--btn)}
 #fl_r{margin-top:14px;width:100%}
@@ -2365,7 +2365,7 @@ const t=(k,a,b)=>{let s=S[lang][k];return typeof s=='string'?s.replace('%1',a).r
 const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
 const tn=n=>lang=='en'?(TE[n]||n):n,ti=n=>lang=='en'?(IE[n]||n):n,th=h=>lang=='en'?(IE[cap(h)]||h):h;
 const ea=a=>{if(lang!='en')return a;const m=a.match(/^([\d.]+)?\s*(.*)$/);return((m[1]||'')+' '+(UE[m[2]]||m[2])).trim()};
-const AR='<svg class="arr" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>';
+const AR='<svg class="arr" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
 const TH={sweet:['\u{1F9C1}','\u{1F36A}','\u{1F369}','\u{1F353}','\u{1F370}','\u{1F950}','\u{1F36B}'],night:['\u{1F319}','\u{2B50}','\u{1F369}','\u{2728}','\u{1F36A}','\u{1F31F}','\u{1F36B}'],fresh:['\u{1F966}','\u{1F34B}','\u{1F345}','\u{1F955}','\u{1F34E}','\u{1F951}','\u{1F33D}']};
 const POS=['left:4%;top:6%','right:6%;top:12%','left:10%;top:38%','right:4%;top:46%','left:3%;top:68%','right:8%;top:80%','left:46%;top:92%'];
 const nt=r=>{const u=r.nu,f=v=>Math.round(v),q=100/u.W,p=t('pf'),row=(l,m)=>`<tr><td>${l}</td><td>${f(u.k*m)}</td><td>${f(u.p*m)}</td><td>${f(u.f*m)}</td><td>${f(u.c*m)}</td></tr>`;
@@ -2399,8 +2399,8 @@ $('c_age').value=pr.age;$('c_w').value=pr.w;$('c_h').value=pr.h;
 
 Object.assign(S.ru,{cu:['\u{1F95F} Грузинская кухня','\u{1F950} Французская кухня','\u{1F35D} Итальянская кухня','\u{1F354} Американская кухня','\u{1F95E} Русская кухня'],pl_b:'\u{1F4CB} Составить рацион на день',pl_sug:'\u{2728} Предложить рацион',pl_t:'Мой рацион на день',pl_goal:'Дневная норма',pl_in:'В рационе',pl_left:'Осталось добрать',pl_over:'Больше нормы на',pl_auto:'\u{1F3B2} Подобрать автоматически',pl_clear:'Очистить',pl_add:'+ Добавить блюдо',pl_pick:'Выбери блюдо',pl_empty:'Пока ничего не выбрано.',pl_por:'порц.',pl_target:'цель',pl_search:'Поиск блюда',pl_note:'Порции примерные: размер считается по составу блюда. Ориентир по БЖУ: 20% белки, 30% жиры, 50% углеводы. Кнопка ↻ меняет блюдо на похожее по калориям.'});
 Object.assign(S.en,{cu:['\u{1F95F} Georgian cuisine','\u{1F950} French cuisine','\u{1F35D} Italian cuisine','\u{1F354} American cuisine','\u{1F95E} Russian cuisine'],pl_b:'\u{1F4CB} Build my daily meal plan',pl_sug:'\u{2728} Suggest a plan',pl_t:'My daily meal plan',pl_goal:'Daily target',pl_in:'In your plan',pl_left:'Left to add',pl_over:'Over the target by',pl_auto:'\u{1F3B2} Pick automatically',pl_clear:'Clear',pl_add:'+ Add a dish',pl_pick:'Choose a dish',pl_empty:'Nothing chosen yet.',pl_por:'serv.',pl_target:'target',pl_search:'Search dishes',pl_note:'Portions are approximate and based on the dish ingredients. Macros guide: 20% protein, 30% fat, 50% carbs. The ↻ button swaps a dish for a similar one.'});
-Object.assign(S.ru,{f_t:'\u{1F50E} Фильтры',f_kc:'Калории на порцию',f_min:'от, ккал',f_max:'до, ккал',f_cu:'Кухня',f_ty:'Тип блюда',f_nc:'\u{1F37D} Без привязки к кухне',f_rs:'Сбросить фильтры',f_pp:'на порцию',ty:['\u{1F35B} Основные блюда','\u{1F372} Супы','\u{1F957} Салаты','\u{1F96B} Соусы и заправки','\u{1F964} Напитки','\u{1F373} Завтраки, блины, каши','\u{1F967} Выпечка и пироги','\u{1F96A} Закуски и бутерброды','\u{1F370} Десерты']});
-Object.assign(S.en,{f_t:'\u{1F50E} Filters',f_kc:'Calories per serving',f_min:'from, kcal',f_max:'to, kcal',f_cu:'Cuisine',f_ty:'Dish type',f_nc:'\u{1F37D} No specific cuisine',f_rs:'Reset filters',f_pp:'per serving',ty:['\u{1F35B} Main dishes','\u{1F372} Soups','\u{1F957} Salads','\u{1F96B} Sauces and dressings','\u{1F964} Drinks','\u{1F373} Breakfasts, pancakes, porridge','\u{1F967} Baking and pies','\u{1F96A} Snacks and sandwiches','\u{1F370} Desserts']});
+Object.assign(S.ru,{f_t:'\u{1F50E} Фильтры',f_kc:'Калории на порцию',f_min:'от, ккал',f_max:'до, ккал',f_cu:'Кухня',f_ty:'Тип блюда',f_nc:'\u{1F37D} Без привязки к кухне',f_rs:'Сбросить фильтры',f_pp:'на порцию',f_more:'Показать ещё',ty:['\u{1F35B} Основные блюда','\u{1F372} Супы','\u{1F957} Салаты','\u{1F96B} Соусы и заправки','\u{1F964} Напитки','\u{1F373} Завтраки, блины, каши','\u{1F967} Выпечка и пироги','\u{1F96A} Закуски и бутерброды','\u{1F370} Десерты']});
+Object.assign(S.en,{f_t:'\u{1F50E} Filters',f_kc:'Calories per serving',f_min:'from, kcal',f_max:'to, kcal',f_cu:'Cuisine',f_ty:'Dish type',f_nc:'\u{1F37D} No specific cuisine',f_rs:'Reset filters',f_pp:'per serving',f_more:'Show more',ty:['\u{1F35B} Main dishes','\u{1F372} Soups','\u{1F957} Salads','\u{1F96B} Sauces and dressings','\u{1F964} Drinks','\u{1F373} Breakfasts, pancakes, porridge','\u{1F967} Baking and pies','\u{1F96A} Snacks and sandwiches','\u{1F370} Desserts']});
 const CK=['грузинская кухня georgian','французская кухня french','итальянская кухня italian','американская кухня american','русская кухня russian'];
 let pl=ld('plan',{m:[[],[],[],[]]});if(!pl||!Array.isArray(pl.m)||pl.m.length!=4)pl={m:[[],[],[],[]]};
 R.forEach((r,i)=>{r.ix=i;r.cu=i<1000?-1:Math.floor((i-1000)/200);r.g=r.cu>=0;let w=0;r.i.forEach(x=>{if(x.n!='Вода')w+=gr(x)});r.w2=w});
@@ -2408,9 +2408,11 @@ const RM=new Map(R.map(r=>[r.n,r]));
 const srv=r=>Math.max(1,Math.round(Math.max(r.w2/380,r.nu.k/650))),pk1=r=>r.nu.k/srv(r),fp=p=>String(p).replace('.',lang=='ru'?',':'.');
 const TB='(?:^|[^а-яё])',TYR=[[1,TB+'(?:суп|борщ|щи(?![а-яё])|солянк|уха(?![а-яё])|харчо|окрошк|рассольник|гаспачо|бульон|чихиртм|минестроне|хаш(?![а-яё]))'],[2,TB+'(?:салат|оливье|винегрет)'],[3,'(?:^|[^а-яё])соус(?![а-яё])|^подлив|^(?:\\S+ )?(?:ткемали|аджик|сацеби|песто|кетчуп|майонез|заправк|гуакамоле|наршараб|беарнез)'],[4,TB+'(?:чай|какао|кофе|смузи|коктейл|лимонад|компот|морс(?!к)|кисель|квас|латте|капучино|глинтвейн|пунш|мохито|горячий шоколад|сок(?![а-яё])|напиток)'],[7,'^(?!x)x'],[5,TB+'(?:пирог|пирожк|хачапури|лобиани|кубдари|ачма|мчади|шотис|гурули|качмази|пицц|ватрушк|булочк|круассан|хлеб|лепёшк|штрудель|кальцоне|фокачч|багет)'],[6,TB+'(?:сэндвич|бутерброд|ролл|маки|бургер|шаурм|дёнер|тосты?(?![а-яё])|закуск|канапе|хот-дог|буррито|тако|кесадилья|лаваш|питта|питу)'],[7,TB+'(?:омлет|яичниц|овсянк|каш[аиу]|гренк|шакшук|сырник|оладь|блин|панкейк|мюсли|гранол|скрэмбл)'],[8,TB+'(?:печенье|торт|шарлотк|десерт|варенье|джем|мусс|желе|пудинг|кекс|маффин|вафл|эклер|пончик|тирамису|чизкейк|печён\\S* яблок|запечённ\\S* яблок|мороженое|коврижк|брауни|пряник|крем-брюле|панна|конфет|шоколадн|сладк|фрукты|ягод)']].filter(x=>x[1]!='^(?!x)x').map(x=>[x[0],new RegExp(x[1])]);
 R.forEach(r=>{const n=r.n.toLowerCase();r.ty=0;for(const [k,re] of TYR)if(re.test(n)){r.ty=k;break}});
-let fs={min:'',max:'',cu:[],ty:[]},fLang='';
+let fs={min:'',max:'',cu:[],ty:[]},fLang='',lastSig='',lim={a:30,f:30};
 const fOk=r=>{const k=pk1(r);return!(fs.min!==''&&k<+fs.min)&&!(fs.max!==''&&k>+fs.max)&&(!fs.cu.length||fs.cu.includes(r.cu))&&(!fs.ty.length||fs.ty.includes(r.ty))};
 const fCnt=()=>fs.cu.length+fs.ty.length+(fs.min!==''?1:0)+(fs.max!==''?1:0);
+const moreB=(k,n)=>`<button class="btn ghost more" data-more="${k}" type="button">${t('f_more')} (${n})</button>`;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){io.unobserve(e.target);e.target.click()}}),{rootMargin:'900px'});
 function renderF(){const ck=(g,v,l)=>`<label class="ck"><input type="checkbox" data-g="${g}" value="${v}"${fs[g].includes(v)?' checked':''}><span>${l}</span></label>`;
  $('fl_t').textContent=t('f_t');$('fl_btn').setAttribute('aria-label',t('f_t').replace(/^\S+\s/,''));
  $('fl_b').innerHTML=`<h4>${t('f_kc')}</h4><div class="fk"><input id="f_min" type="number" inputmode="numeric" min="0" placeholder="${t('f_min')}" value="${fs.min}" aria-label="${t('f_min')}"><input id="f_max" type="number" inputmode="numeric" min="0" placeholder="${t('f_max')}" value="${fs.max}" aria-label="${t('f_max')}"></div>
@@ -2459,7 +2461,7 @@ function pkR(){const n=norm();if(!n||!n.k)return;const T=n.k*MS[pkM],q=$('pk_q')
  L=L.slice().sort((a,b)=>Math.abs(pk1(a)-T)-Math.abs(pk1(b)-T)).slice(0,80);
  $('pk_l').innerHTML=L.map(r=>`<div class="pit"><div style="flex:1;min-width:0"><b>${r.e} ${tn(r.n)}</b>${r.g?`<span class="tg">${t('cu')[r.cu]}</span>`:''}<span class="meta">${Math.round(pk1(r))} ${t('c_kc')} · ${t('pl_por')} · ${r.t} ${t('min')}</span></div><div class="pq"><button data-i="${r.ix}" aria-label="+">+</button></div></div>`).join('')||`<p class="hint">${t('none')}</p>`}
 function plOpen(auto){if(auto||!pl.m.some(a=>a.length))plAuto();plR();oOpen('pl')}
-function stat(){if(fLang!=lang){fLang=lang;renderF()}const d=document.documentElement;d.dataset.theme=theme;d.lang=lang;document.title=lang=='en'?'What to cook?':'Что приготовить?';
+function stat(){if(fLang!=lang){fLang=lang;renderF()}const d=document.documentElement;d.dataset.theme=theme;d.lang=lang;{const bg=getComputedStyle(d).getPropertyValue('--bg').trim(),m=document.querySelector('meta[name=theme-color]');if(bg&&m)m.setAttribute('content',bg)}document.title=lang=='en'?'What to cook?':'Что приготовить?';
  $('h1').textContent=t('h1');$('sub').textContent=t('sub');$('in').placeholder=t('ph');$('in').setAttribute('aria-label',t('prod'));$('add').textContent=t('add');$('sr').placeholder=t('sr');$('sr').setAttribute('aria-label',t('sr'));
  $('th').textContent='\u{1F3A8}';$('th').title=$('th').ariaLabel=t('th')[theme];$('lg').textContent=lang=='en'?'\u{1F310} RU':'\u{1F310} EN';$('lg').setAttribute('aria-label',lang=='en'?'Русский':'English');$('msg').textContent=t(mk);
  $('deco').innerHTML='';calcR()}
@@ -2475,7 +2477,7 @@ function card(r,miss){const H=hs();const nn=norm(),pc=nn&&nn.k?`<div class="pc">
  const o=open.has(r.n),L=r.i.filter(x=>!x.ig),m=L.filter(x=>H.has(x.k)).length,cnt=have.length?`<div class="cnt${m==L.length?' full':''}">${t('match',m,L.length)}</div>`:'';
  const det=o?`<div class="det"><h4>${t('ing')}</h4><ul>${r.i.map(x=>`<li class="${x.ig||H.has(x.k)?'ok':'no'}">${ti(x.n)}: ${ea(x.a)}</li>`).join('')}</ul><h4>${t('prep')}</h4><ol>${r.s.map(s=>`<li>${s.replace(/(\d+[–-]?\d*\s?(°C|мин))/g,(a,b)=>`<span class="t">${lang=='en'?b.replace('мин','min'):b}</span>`)}</li>`).join('')}</ol><h4>${t('kb')}</h4>${nt(r)}</div>`:'';
  return `<div class="card"><div class="top"><span class="em">${r.e}</span><div style="flex:1"><b>${tn(r.n)}</b>${r.g?`<span class="tg">${t('cu')[r.cu]}</span>`:''}<span class="meta">\u{23F1} ${r.t} ${t('min')} · \u{1F525} ${Math.round(r.nu.k*100/r.nu.W)} ${t('k100')} · \u{1F37D} ${Math.round(pk1(r))} ${t('c_kc')} ${t('f_pp')}</span></div><button class="heart" data-f="${r.n}" aria-label="${t('favL')}">${fav.includes(r.n)?'♥':'♡'}</button><button class="btn ghost arrow${o?' open':''}" data-r="${r.n}" aria-expanded="${o}" aria-label="${t('rec')}">${AR}</button></div>${cnt}${pc}${buy}${det}</div>`}
-function draw(){showAll=!!view;const H=hs();stat();
+function draw(){showAll=!!view;const H=hs();stat();{const sg=JSON.stringify([view,sq,fs,have]);if(sg!=lastSig){lastSig=sg;lim={a:30,f:30}}}
  $('sep').style.display=have.length?'block':'none';$('chips').innerHTML=have.map((h,i)=>`<button class="chip" data-d="${i}" aria-label="${t('rm')} ${th(h)}">${th(h)} ✕</button>`).join('');
  $('quick').innerHTML=Q.filter(q=>!H.has(K(q))).map(q=>`<button class="q" data-q="${q}">+ ${th(q)}</button>`).join('');
  $('panel').innerHTML=(fav.length?`<div class="hint">${t('fav')}</div><div class="wrap">${fav.map(n=>`<button class="q" data-o="${n}">${tn(n)}</button>`).join('')}</div>`:'');
@@ -2485,18 +2487,19 @@ function draw(){showAll=!!view;const H=hs();stat();
  let h=fh;
  if(!have.length)h=showAll?'':`<p class="hint">${t('empty')}</p>`;
  else{h+=`<h2>${t('now')} (${now.length})</h2>`+(now.map(x=>card(x.r,[])).join('')||`<p class="hint">${t('nowE')}</p>`);
- h+=`<h2>${t('near')} (${near.length})</h2>`+(near.map(x=>card(x.r,x.miss)).join('')||`<p class="hint">${t('nearE')}</p>`)+(far.length?`<h2>${t('far')} (${far.length})</h2>`+far.map(x=>card(x.r,x.miss)).join(''):'')}
+ h+=`<h2>${t('near')} (${near.length})</h2>`+(near.map(x=>card(x.r,x.miss)).join('')||`<p class="hint">${t('nearE')}</p>`)+(far.length?`<h2>${t('far')} (${far.length})</h2>`+far.slice(0,lim.f).map(x=>card(x.r,x.miss)).join('')+(far.length>lim.f?moreB('f',far.length-lim.f):''):'')}
  if(showAll)h=fh;
  $('sw').style.display=showAll?'block':'none';
- if(showAll){const f=sq.toLowerCase().replace(/ё/g,'е').trim(),L=info.filter(x=>!f||(x.r.n+' '+(TE[x.r.n]||'')+(x.r.g?' '+CK[x.r.cu]:'')+' '+x.r.i.map(i=>i.n+' '+(IE[i.n]||'')).join(' ')).toLowerCase().replace(/ё/g,'е').includes(f)).filter(x=>fOk(x.r)).sort((a,b)=>have.length?srt(a,b):0);
- const B=view=='q'?L.filter(x=>x.r.t<30):view=='l'?L.filter(x=>x.r.t>=30):L,TT=view=='q'?t('qk'):view=='l'?t('lg'):t('all');h+=`<h2>${TT} (${B.length})</h2>`+(B.map(x=>card(x.r,[])).join('')||`<p class="hint">${t('none')}</p>`)}
- $('out').innerHTML=h;$('all').className='btn ghost tog arrow big2'+(view=='a'?' open on':'');$('all').setAttribute('aria-expanded',view=='a');$('vq').innerHTML=t('vq');$('vl').innerHTML=t('vl');$('vq').className='btn ghost'+(view=='q'?' on':'');$('vl').className='btn ghost'+(view=='l'?' on':'');$('all').innerHTML=`<span>${view=='a'?t('hideAll'):t('showAll')}</span>${AR}`}
+ if(showAll){const f=sq.toLowerCase().replace(/ё/g,'е').trim(),L=info.filter(x=>!f||(x.r.sx||(x.r.sx=(x.r.n+' '+(TE[x.r.n]||'')+(x.r.g?' '+CK[x.r.cu]:'')+' '+x.r.i.map(i=>i.n+' '+(IE[i.n]||'')).join(' ')).toLowerCase().replace(/ё/g,'е'))).includes(f)).filter(x=>fOk(x.r)).sort((a,b)=>have.length?srt(a,b):0);
+ const B=view=='q'?L.filter(x=>x.r.t<30):view=='l'?L.filter(x=>x.r.t>=30):L,TT=view=='q'?t('qk'):view=='l'?t('lg'):t('all');h+=`<h2>${TT} (${B.length})</h2>`+(B.slice(0,lim.a).map(x=>card(x.r,[])).join('')+(B.length>lim.a?moreB('a',B.length-lim.a):'')||`<p class="hint">${t('none')}</p>`)}
+ $('out').innerHTML=h;$('out').querySelectorAll('.more').forEach(m=>io.observe(m));$('all').className='btn ghost tog arrow big2'+(view=='a'?' open on':'');$('all').setAttribute('aria-expanded',view=='a');$('vq').innerHTML=t('vq');$('vl').innerHTML=t('vl');$('vq').className='btn ghost'+(view=='q'?' on':'');$('vl').className='btn ghost'+(view=='l'?' on':'');$('all').innerHTML=`<span>${view=='a'?t('hideAll'):t('showAll')}</span>${AR}`}
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
  if(b.id=='th'){const k=Object.keys(TH);theme=k[(k.indexOf(theme)+1)%k.length];sv('theme',theme);draw()}
  else if(b.id=='lg'){lang=lang=='en'?'ru':'en';sv('lang',lang);draw()}
  else if(b.dataset.d!==undefined){have.splice(+b.dataset.d,1);sv('have',have);draw()}
  else if(b.dataset.f){const n=b.dataset.f;fav=fav.includes(n)?fav.filter(x=>x!=n):[...fav,n];sv('fav',fav);draw()}
  else if(b.dataset.o){open.add(b.dataset.o);draw();$('fav').scrollIntoView({behavior:'smooth'})}
+ else if(b.dataset.more){lim[b.dataset.more]+=40;draw()}
  else if(b.dataset.q)add(b.dataset.q);
  else if(b.dataset.r){open.has(b.dataset.r)?open.delete(b.dataset.r):open.add(b.dataset.r);draw()}});
 $('add').onclick=()=>add($('in').value);

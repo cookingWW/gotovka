@@ -1,6 +1,6 @@
 // Сервис-воркер: приложение работает без интернета.
 // Если обновили файлы на GitHub, а у пользователей старая версия, увеличьте номер ниже.
-const CACHE = 'gotovka-v1';
+const CACHE = 'gotovka-v3';
 const FILES = ['./', 'index.html', 'manifest.webmanifest', 'img/favicon.svg', 'img/icon-192.png', 'img/icon-512.png', 'img/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
